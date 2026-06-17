@@ -3,9 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>NORTHBRIDGE Construction Group Ltd.</title>
 
 <style>
+
+html{
+scroll-behavior:smooth;
+}
+
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
@@ -14,31 +20,42 @@ color:white;
 }
 
 .hero{
-min-height:90vh;
+min-height:100vh;
 display:flex;
-align-items:center;
 justify-content:center;
+align-items:center;
 text-align:center;
 padding:40px 20px;
-background:linear-gradient(135deg,#000 50%,#001f4d);
+background:linear-gradient(135deg,#000,#001c46,#000);
+background-size:300% 300%;
+animation:bgMove 10s ease infinite;
 }
 
-.logo-box{
-max-width:1000px;
+@keyframes bgMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
 }
 
-.logo-mark{
+.hero-content{
+max-width:1100px;
+}
+
+.logo{
 font-size:90px;
 font-weight:900;
 color:#0d6efd;
-letter-spacing:4px;
-margin-bottom:20px;
+margin-bottom:15px;
+text-shadow:0 0 30px rgba(13,110,253,.5);
+animation:fadeUp 1s ease;
 }
 
 h1{
-font-size:48px;
+font-size:65px;
 margin:0;
+font-weight:900;
 letter-spacing:3px;
+animation:fadeUp 1.2s ease;
 }
 
 .blue{
@@ -47,127 +64,346 @@ color:#0d6efd;
 
 .subtitle{
 font-size:24px;
-margin:15px 0;
-color:#d8d8d8;
+margin-top:20px;
+color:#d4d4d4;
+animation:fadeUp 1.4s ease;
 }
 
 .line{
 height:2px;
-background:#777;
+background:#0d6efd;
+max-width:900px;
 margin:30px auto;
-max-width:850px;
+box-shadow:0 0 15px #0d6efd;
 }
 
-.info{
+.contact-info{
 font-size:18px;
-margin:20px 0;
+line-height:2;
+animation:fadeUp 1.6s ease;
 }
 
-.services{
-font-size:16px;
-letter-spacing:1px;
-color:#eee;
+.services-banner{
 margin-top:25px;
+font-size:15px;
+letter-spacing:1px;
+color:#d9d9d9;
+line-height:1.8;
+}
+
+.slogan{
+margin-top:35px;
+font-size:34px;
+font-weight:700;
 }
 
 .section{
-padding:60px 25px;
-max-width:1100px;
+max-width:1200px;
 margin:auto;
+padding:80px 25px;
 }
 
-h2{
+.section-title{
+font-size:48px;
 color:#0d6efd;
-font-size:32px;
+margin-bottom:40px;
+text-align:center;
 }
 
-.grid{
+.services-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:18px;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
 }
 
 .card{
 background:#111;
 border:1px solid #0d6efd;
-border-radius:10px;
-padding:22px;
-font-size:18px;
+border-radius:15px;
+padding:28px;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 0 25px rgba(13,110,253,.35);
+}
+
+.card h3{
+margin-top:0;
+font-size:24px;
+}
+
+.card p{
+color:#d0d0d0;
+line-height:1.7;
+}
+
+.why-us{
+background:#0b0b0b;
+}
+
+.checklist{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+font-size:20px;
+}
+
+.check{
+background:#111;
+padding:20px;
+border-radius:12px;
+border-left:4px solid #0d6efd;
+}
+
+.areas{
+text-align:center;
+}
+
+.area-list{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:15px;
+}
+
+.area{
+background:#111;
+border:1px solid #0d6efd;
+padding:12px 18px;
+border-radius:50px;
 }
 
 .contact{
-background:#0b0b0b;
+background:#080808;
 text-align:center;
-padding:60px 20px;
+padding:90px 20px;
+}
+
+.contact h2{
+font-size:50px;
+color:#0d6efd;
+}
+
+.contact p{
+font-size:22px;
+max-width:900px;
+margin:auto;
+color:#d0d0d0;
+}
+
+.buttons{
+margin-top:35px;
 }
 
 .btn{
 display:inline-block;
+padding:18px 35px;
+margin:10px;
 background:#0d6efd;
 color:white;
-padding:15px 25px;
-border-radius:8px;
 text-decoration:none;
+border-radius:10px;
 font-weight:bold;
-margin:10px;
+transition:.3s;
+}
+
+.btn:hover{
+transform:scale(1.05);
+box-shadow:0 0 25px rgba(13,110,253,.5);
 }
 
 footer{
+padding:30px;
 text-align:center;
-padding:25px;
-color:#aaa;
+color:#999;
+background:#050505;
 }
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@media(max-width:768px){
+
+.logo{
+font-size:70px;
+}
+
+h1{
+font-size:42px;
+}
+
+.subtitle{
+font-size:18px;
+}
+
+.slogan{
+font-size:24px;
+}
+
+.section-title{
+font-size:36px;
+}
+
+}
+
 </style>
 </head>
 
 <body>
 
 <section class="hero">
-<div class="logo-box">
-<div class="logo-mark">NB</div>
+
+<div class="hero-content">
+
+<div class="logo">NB</div>
 
 <h1>NORTHBRIDGE</h1>
 <h1 class="blue">CONSTRUCTION GROUP LTD.</h1>
 
+<p class="subtitle">
+Commercial Interior & Exterior Systems
+</p>
+
 <div class="line"></div>
 
-<div class="info">
-📞 604-670-3784 &nbsp; | &nbsp;
-📧 miguel@northbridgeconstruction.ca &nbsp; | &nbsp;
+<div class="contact-info">
+📞 604-670-3784<br>
+📧 miguel@northbridgeconstruction.ca<br>
 🌐 northbridgeconstruction.ca
 </div>
 
 <div class="line"></div>
 
-<div class="services">
-STEEL STUD FRAMING | DRYWALL | EXTERIOR FRAMING | DENSEGLASS | T-BAR CEILINGS | DEMOLITION | TENANT IMPROVEMENTS
+<div class="services-banner">
+COMMERCIAL FRAMING • EXTERIOR STEEL STUD FRAMING • STEEL STUD FRAMING • DRYWALL • DENSEGLASS • T-BAR CEILINGS • TENANT IMPROVEMENTS • DEMOLITION
 </div>
 
-<p class="subtitle">Quality Work. <span class="blue">Reliable Crews.</span> Built On Trust.</p>
+<div class="slogan">
+Reliable Crews. <span class="blue">Quality Work.</span> On Schedule.
 </div>
+
+</div>
+
 </section>
 
 <section class="section">
-<h2>Our Services</h2>
-<div class="grid">
-<div class="card">Steel Stud Framing</div>
-<div class="card">Exterior Steel Stud</div>
-<div class="card">Drywall Installation</div>
-<div class="card">DenseGlass Installation</div>
-<div class="card">T-Bar Ceilings</div>
-<div class="card">Demolition</div>
-<div class="card">Tenant Improvements</div>
-<div class="card">Bulkheads & Soffits</div>
-<div class="card">Commercial Framing</div>
+
+<h2 class="section-title">Our Services</h2>
+
+<div class="services-grid">
+
+<div class="card">
+<h3>Commercial Framing</h3>
+<p>Interior framing systems for offices, retail spaces, schools, hospitals, tenant improvements and multi-family projects.</p>
 </div>
+
+<div class="card">
+<h3>Exterior Steel Stud Framing</h3>
+<p>Heavy gauge exterior wall systems, parapets, structural framing and building envelope support.</p>
+</div>
+
+<div class="card">
+<h3>Steel Stud Framing</h3>
+<p>Commercial steel stud framing, high walls, shafts and specialty framing details.</p>
+</div>
+
+<div class="card">
+<h3>Drywall Installation</h3>
+<p>Commercial drywall installation for new construction and renovation projects.</p>
+</div>
+
+<div class="card">
+<h3>DenseGlass Installation</h3>
+<p>Professional exterior sheathing systems and weather resistant assemblies.</p>
+</div>
+
+<div class="card">
+<h3>T-Bar Ceilings</h3>
+<p>Acoustic ceiling systems, suspended ceilings and complete grid installation.</p>
+</div>
+
+<div class="card">
+<h3>Tenant Improvements</h3>
+<p>Interior commercial renovations and tenant improvement construction services.</p>
+</div>
+
+<div class="card">
+<h3>Demolition</h3>
+<p>Selective demolition, site preparation and commercial project cleanup.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section why-us">
+
+<h2 class="section-title">Why Choose Northbridge</h2>
+
+<div class="checklist">
+
+<div class="check">✅ WCB Compliant</div>
+
+<div class="check">✅ $5 Million Liability Insurance</div>
+
+<div class="check">✅ Safety Certified Crew</div>
+
+<div class="check">✅ Commercial & Multi-Family Experience</div>
+
+<div class="check">✅ Reliable Scheduling</div>
+
+<div class="check">✅ Quality Workmanship</div>
+
+</div>
+
+</section>
+
+<section class="section areas">
+
+<h2 class="section-title">Areas We Serve</h2>
+
+<div class="area-list">
+
+<div class="area">Vancouver</div>
+<div class="area">Burnaby</div>
+<div class="area">Surrey</div>
+<div class="area">Langley</div>
+<div class="area">Coquitlam</div>
+<div class="area">Richmond</div>
+<div class="area">Delta</div>
+<div class="area">Abbotsford</div>
+<div class="area">Fraser Valley</div>
+
+</div>
+
 </section>
 
 <section class="contact">
+
 <h2>Contact NORTHBRIDGE</h2>
-<p>Commercial Interior & Exterior Systems serving Metro Vancouver and the Fraser Valley.</p>
+
+<p>
+Commercial Interior & Exterior Systems serving Metro Vancouver and the Fraser Valley.
+</p>
+
+<div class="buttons">
 
 <a class="btn" href="tel:6046703784">Call Now</a>
+
 <a class="btn" href="mailto:miguel@northbridgeconstruction.ca">Email Us</a>
+
+</div>
+
 </section>
 
 <footer>
